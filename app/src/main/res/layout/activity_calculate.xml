@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D6D6D6"
+    tools:context=".CalculateActivity">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/indique_o_valor_de_cada_combust_vel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+<!--Combustível 1-->
+    <TextView
+        android:id="@+id/tvFuel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/combust_vel_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <ImageButton
+        android:id="@+id/ivSearch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFuel1"
+        app:layout_constraintStart_toEndOf="@+id/tvFuel1"
+        app:layout_constraintTop_toTopOf="@+id/tvFuel1"
+        app:srcCompat="@drawable/ic_search"
+        app:tint="@color/blue"
+        tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
+
+<!-- Consumo 1-->
+    <ImageView
+        android:id="@+id/ivFuel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="@+id/tvFuel1"
+        app:layout_constraintTop_toBottomOf="@+id/tvFuel1"
+        app:srcCompat="@drawable/ic_fuel"
+        app:tint="@color/orange_500"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/tvConsumo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/consumo"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFuel1"
+        app:layout_constraintStart_toEndOf="@+id/ivFuel1"
+        app:layout_constraintTop_toTopOf="@+id/ivFuel1" />
+
+    <EditText
+        android:id="@+id/etConsumo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/_0_0"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:padding="16dp"
+        android:textColorHint="#b0b4b5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintStart_toEndOf="@+id/ivSearch1"
+        app:layout_constraintTop_toBottomOf="@+id/tvFuel1"
+        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+<!-- Preço 1-->
+    <ImageView
+        android:id="@+id/ivPrice1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="@+id/ivFuel1"
+        app:layout_constraintTop_toBottomOf="@+id/etConsumo1"
+        app:srcCompat="@drawable/ic_money"
+        app:tint="@color/green"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/tvValor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/valor"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPrice1"
+        app:layout_constraintStart_toEndOf="@+id/ivPrice1"
+        app:layout_constraintTop_toBottomOf="@+id/etConsumo1" />
+
+    <EditText
+        android:id="@+id/etValor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/_0_0"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:padding="16dp"
+        android:textColorHint="#b0b4b5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintStart_toEndOf="@+id/ivSearch1"
+        app:layout_constraintTop_toBottomOf="@+id/etConsumo1"
+        tools:ignore="TextContrastCheck" />
+
+<!--Combustível 2-->
+    <TextView
+        android:id="@+id/tvFuel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/combust_vel_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etValor1" />
+
+    <ImageButton
+        android:id="@+id/ivSearch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFuel2"
+        app:layout_constraintStart_toEndOf="@+id/tvFuel2"
+        app:layout_constraintTop_toTopOf="@+id/tvFuel2"
+        app:srcCompat="@drawable/ic_search"
+        app:tint="@color/blue"
+        tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
+
+<!--Consumo 2-->
+    <ImageView
+        android:id="@+id/ivFuel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="@+id/tvFuel2"
+        app:layout_constraintTop_toBottomOf="@+id/tvFuel2"
+        app:srcCompat="@drawable/ic_fuel"
+        app:tint="@color/orange_500"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/tvConsumo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/consumo"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFuel2"
+        app:layout_constraintStart_toEndOf="@+id/ivFuel2"
+        app:layout_constraintTop_toTopOf="@+id/ivFuel2" />
+
+    <EditText
+        android:id="@+id/etConsumo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/_0_0"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:padding="16dp"
+        android:textColorHint="#b0b4b5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintStart_toEndOf="@+id/ivSearch2"
+        app:layout_constraintTop_toBottomOf="@+id/tvFuel2"
+        tools:ignore="TextContrastCheck" />
+
+
+<!-- Preço 2-->
+    <ImageView
+        android:id="@+id/ivPrice2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="@+id/ivFuel2"
+        app:layout_constraintTop_toBottomOf="@+id/etConsumo2"
+        app:srcCompat="@drawable/ic_money"
+        app:tint="@color/green"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/tvValor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/valor"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPrice2"
+        app:layout_constraintStart_toStartOf="@+id/tvConsumo2"
+        app:layout_constraintTop_toBottomOf="@+id/etConsumo2"
+        app:layout_constraintVertical_bias="0.968" />
+
+    <EditText
+        android:id="@+id/etValor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/_0_0"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:padding="16dp"
+        android:textColorHint="#b0b4b5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintStart_toEndOf="@+id/ivSearch2"
+        app:layout_constraintTop_toBottomOf="@+id/etConsumo2"
+        tools:ignore="TextContrastCheck" />
+
+<!-- Resultado -->
+
+    <TextView
+        android:id="@+id/tvComb1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:padding="16dp"
+        android:text="@string/comb1"
+        app:layout_constraintStart_toStartOf="@+id/ivPrice2"
+        app:layout_constraintTop_toBottomOf="@id/etValor2" />
+
+    <TextView
+        android:id="@+id/tvResult1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:padding="16dp"
+        android:text="@string/zeros"
+        app:layout_constraintBottom_toBottomOf="@+id/tvComb1"
+        app:layout_constraintStart_toEndOf="@+id/tvComb1"
+        app:layout_constraintTop_toTopOf="@+id/tvComb1" />
+
+    <TextView
+        android:id="@+id/tvComb2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="16dp"
+        android:text="@string/comb2"
+        app:layout_constraintStart_toStartOf="@+id/ivPrice2"
+        app:layout_constraintTop_toBottomOf="@+id/tvResult1" />
+
+    <TextView
+        android:id="@+id/tvResult2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:padding="16dp"
+        android:text="@string/zeros"
+        app:layout_constraintBottom_toBottomOf="@+id/tvComb2"
+        app:layout_constraintStart_toEndOf="@+id/tvComb2"
+        app:layout_constraintTop_toTopOf="@+id/tvComb2" />
+
+    <TextView
+        android:id="@+id/tvComb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="16dp"
+        android:text="@string/result_s"
+        app:layout_constraintStart_toStartOf="@+id/ivPrice2"
+        app:layout_constraintTop_toBottomOf="@+id/tvResult2" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:padding="16dp"
+        android:text="@string/emptyresult"
+        app:layout_constraintBottom_toBottomOf="@+id/tvComb"
+        app:layout_constraintStart_toEndOf="@+id/tvComb"
+        app:layout_constraintTop_toTopOf="@+id/tvComb"
+        app:layout_constraintVertical_bias="@string/_0_0" />
+
+<!-- Bt Limpar -->
+    <Button
+        android:id="@+id/btLimpar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/limpar"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+<!-- Bt Calcular -->
+    <Button
+        android:id="@+id/btCalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calcular"
+        app:layout_constraintBottom_toBottomOf="@+id/btLimpar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btLimpar"
+        tools:ignore="TextContrastCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

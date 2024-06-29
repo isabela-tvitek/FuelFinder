@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">FuelFinder</string>
+    <string name="zeros">0.0\n</string>
+    <string name="toast_limpar">Tela Reiniciada.</string>
+    <string name="erro_consumo">Campo Consumo deve ser Preenchido.</string>
+    <string name="erro_preco">Campo Preço deve ser Preenchido.</string>
+    <string name="comb1">Combustível 1:</string>
+    <string name="comb2">Combustível 2:</string>
+    <string name="result_s">O melhor combustível é:</string>
+    <string name="calcular">Calcular</string>
+    <string name="limpar">Limpar</string>
+    <string name="_0_0">0.0</string>
+    <string name="consumo">Consumo:</string>
+    <string name="combust_vel_2">Combustível 2</string>
+    <string name="combust_vel_1">Combustível 1</string>
+    <string name="emptyresult">-</string>
+    <string name="indique_o_valor_de_cada_combust_vel">Indique o valor de cada combustível</string>
+    <string name="valor">Valor:</string>
+    <string name="iniciar">Iniciar</string>
+</resources>
