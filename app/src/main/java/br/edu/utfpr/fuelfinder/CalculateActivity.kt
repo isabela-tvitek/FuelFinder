@@ -25,6 +25,10 @@ class CalculateActivity : AppCompatActivity() {
     private lateinit var btCalcular: Button
     private lateinit var ivSearch1: ImageButton
     private lateinit var ivSearch2: ImageButton
+    private lateinit var tvFuel1: TextView
+    private lateinit var tvFuel2: TextView
+    private lateinit var tvComb1: TextView
+    private lateinit var tvComb2: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +45,10 @@ class CalculateActivity : AppCompatActivity() {
         btCalcular = findViewById(R.id.btCalcular)
         ivSearch1 = findViewById(R.id.ivSearch1)
         ivSearch2 = findViewById(R.id.ivSearch2)
+        tvFuel1 = findViewById(R.id.tvFuel1)
+        tvFuel2 = findViewById(R.id.tvFuel2)
+        tvComb1 = findViewById(R.id.tvComb1)
+        tvComb2 = findViewById(R.id.tvComb2)
 
         btCalcular.setOnClickListener {
             btCalcularOnClick()
@@ -72,8 +80,9 @@ class CalculateActivity : AppCompatActivity() {
     private val getResult1 = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if (it.resultCode == RESULT_OK) {
             val codSelecionado = it.data?.getIntExtra("codRetorno", -1)
+            val nomeSelecionado = it.data?.getStringExtra("nomeRetorno")
 
-            if (codSelecionado != null) {
+            if (codSelecionado != null && nomeSelecionado != null) {
                 val item = when (codSelecionado) {
                     0 -> 12.0  // Gasolina
                     1 -> 10.0   // Etanol
@@ -84,6 +93,8 @@ class CalculateActivity : AppCompatActivity() {
 
                 if (item != null) {
                     etConsumo1.setText(item.toString())
+                    tvFuel1.text = nomeSelecionado
+                    tvComb1.text = nomeSelecionado
                 }
             }
         }
@@ -92,8 +103,9 @@ class CalculateActivity : AppCompatActivity() {
     private val getResult2 = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if (it.resultCode == RESULT_OK) {
             val codSelecionado = it.data?.getIntExtra("codRetorno", -1)
+            val nomeSelecionado = it.data?.getStringExtra("nomeRetorno")
 
-            if (codSelecionado != null) {
+            if (codSelecionado != null && nomeSelecionado != null) {
                 val item = when (codSelecionado) {
                     0 -> 12.0  // Gasolina
                     1 -> 10.0   // Etanol
@@ -104,6 +116,8 @@ class CalculateActivity : AppCompatActivity() {
 
                 if (item != null) {
                     etConsumo2.setText(item.toString())
+                    tvFuel2.text = nomeSelecionado
+                    tvComb2.text = nomeSelecionado
                 }
             }
         }
@@ -117,6 +131,10 @@ class CalculateActivity : AppCompatActivity() {
         tvResult1.text = getString(R.string.zeros)
         tvResult2.text = getString(R.string.zeros)
         tvResult.text = getString(R.string.zeros)
+        tvFuel1.text = getString(R.string.combust_vel_1)
+        tvFuel2.text = getString(R.string.combust_vel_2)
+        tvComb1.text = getString(R.string.combust_vel_1)
+        tvComb2.text = getString(R.string.combust_vel_2)
         etConsumo1.requestFocus()
         Toast.makeText(this, getString(R.string.toast_limpar), Toast.LENGTH_LONG).show()
     }
@@ -157,11 +175,14 @@ class CalculateActivity : AppCompatActivity() {
             tvResult1.text = nf.format(result1).toDouble().toString()
             tvResult2.text = nf.format(result2).toDouble().toString()
 
-            tvResult.text = when {
-                result1 < result2 -> "Combustível 1"
-                result1 > result2 -> "Combustível 2"
+            val melhorCombustivel = when {
+                result1 < result2 -> tvFuel1.text.toString()
+                result1 > result2 -> tvFuel2.text.toString()
                 else -> "Ambos"
             }
+
+            tvResult.text = melhorCombustivel
+
         } catch (e: NumberFormatException) {
             Toast.makeText(this, "Erro ao calcular: valores inválidos.", Toast.LENGTH_LONG).show()
         }

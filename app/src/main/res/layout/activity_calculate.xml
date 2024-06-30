@@ -5,7 +5,6 @@
     android:id="@+id/cl_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D6D6D6"
     tools:context=".CalculateActivity">
 
     <TextView
@@ -34,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:importantForAccessibility="no"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="@+id/tvFuel1"
         app:layout_constraintStart_toEndOf="@+id/tvFuel1"
         app:layout_constraintTop_toTopOf="@+id/tvFuel1"
@@ -135,6 +135,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:importantForAccessibility="no"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="@+id/tvFuel2"
         app:layout_constraintStart_toEndOf="@+id/tvFuel2"
         app:layout_constraintTop_toTopOf="@+id/tvFuel2"

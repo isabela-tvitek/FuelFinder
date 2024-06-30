@@ -4,7 +4,6 @@
     android:id="@+id/lvCombustiveis"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D6D6D6"
     android:entries="@array/combustiveis"
     tools:context=".ListarActivity"
     tools:ignore="VisualLintBounds">

@@ -8,4 +8,8 @@
     <color name="green">#069F03</color>
     <color name="green_700">#014D00</color>
     <color name="blue">#04C1C4</color>
+    <color name="background">#D6D6D6</color>
+    <color name="background_night">#121212</color>
+    <color name="text_primary_night">#FFFFFF</color>
+    <color name="text_secondary_night">#B3B3B3</color>
 </resources>

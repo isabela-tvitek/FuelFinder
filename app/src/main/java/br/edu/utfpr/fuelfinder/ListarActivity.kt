@@ -15,7 +15,10 @@ class ListarActivity : AppCompatActivity() {
         lvCombustiveis = findViewById(R.id.lvCombustiveis)
 
         lvCombustiveis.setOnItemClickListener { parent, view, position, id ->
-            intent.putExtra("codRetorno", position)
+            val codSelecionado = position
+            val nomeSelecionado = parent.getItemAtPosition(position).toString()
+            intent.putExtra("codRetorno", codSelecionado)
+            intent.putExtra("nomeRetorno", nomeSelecionado)
             setResult(RESULT_OK, intent)
             finish()
         }
